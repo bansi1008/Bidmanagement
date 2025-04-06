@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../axios.js";
 
 const AddBidForm = () => {
   const [formData, setFormData] = useState({
@@ -30,10 +30,7 @@ const AddBidForm = () => {
     };
 
     try {
-      const res = await axios.post(
-        "http://localhost:4100/api/v1/getBids",
-        payload
-      );
+      const res = await axios.post("/getBids", payload);
       console.log("Bid added:", res.data);
       alert("Bid added successfully!");
 

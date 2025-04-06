@@ -15,6 +15,8 @@ const AllBids = () => {
     };
     fetchBids();
   }, []);
+  const totalBids = bids.length;
+  const totalBidAmount = bids.reduce((acc, bid) => acc + bid.bidAmount, 0);
 
   return (
     <div>
@@ -26,6 +28,8 @@ const AllBids = () => {
           </li>
         ))}
       </ul>
+      <h3>Total Bids: {totalBids}</h3>
+      <h3>Total Bid Amount: ${totalBidAmount}</h3>
     </div>
   );
 };
